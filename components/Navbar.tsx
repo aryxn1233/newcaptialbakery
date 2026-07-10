@@ -62,10 +62,10 @@ export default function Navbar() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className={`fixed top-0 left-0 right-0 z-[900] transition-all duration-500 ${
+        className={`fixed z-[900] transition-all duration-500 rounded-[24px] ${
           scrolled
-            ? "glass shadow-[0_4px_32px_rgba(61,26,10,0.12)]"
-            : "bg-transparent"
+            ? "top-4 left-4 right-4 glass-panel max-w-[1280px] mx-auto"
+            : "top-0 left-0 right-0 bg-transparent"
         }`}
       >
         <div className="container-main">
@@ -114,15 +114,15 @@ export default function Navbar() {
             <div className="flex items-center gap-3">
               <a
                 href="tel:+918054805451"
-                className="btn btn-sm hidden md:inline-flex"
+                className={`hidden md:inline-flex ${scrolled ? 'glass-button' : 'btn btn-sm'}`}
                 style={{
                   background: atTop
                     ? "rgba(201,169,110,0.18)"
-                    : "linear-gradient(135deg, var(--coffee) 0%, var(--choco-700) 100%)",
-                  color: atTop ? "var(--gold-light)" : "var(--cream)",
-                  border: atTop ? "1.5px solid rgba(201,169,110,0.4)" : "none",
-                  boxShadow: atTop ? "none" : "var(--shadow-md)",
-                  backdropFilter: atTop ? "blur(8px)" : "none",
+                    : undefined,
+                  color: atTop ? "var(--gold-light)" : undefined,
+                  border: atTop ? "1.5px solid rgba(201,169,110,0.4)" : undefined,
+                  boxShadow: atTop ? "none" : undefined,
+                  backdropFilter: atTop ? "blur(8px)" : undefined,
                 }}
                 aria-label="Call Now"
               >

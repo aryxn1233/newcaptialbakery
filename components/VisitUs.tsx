@@ -52,8 +52,7 @@ export default function VisitUs() {
     <section
       id="visit"
       ref={ref}
-      className="section-padding"
-      style={{ background: "var(--cream)" }}
+      className="section-padding ambient-bg"
       aria-label="Visit New Capital Bakery"
     >
       <div className="container-main">
@@ -96,21 +95,16 @@ export default function VisitUs() {
                 initial={{ opacity: 0, x: -24 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.2 + i * 0.08 }}
-                className="flex items-start gap-4 rounded-[var(--radius-lg)] group"
+                className="flex items-start gap-4 glass-panel group"
                 style={{
-                  background: "#fff",
-                  border: "1px solid var(--beige)",
                   padding: "clamp(16px, 2vw, 22px)",
-                  boxShadow: "var(--shadow-sm)",
-                  transition: "border-color 0.3s ease, box-shadow 0.3s ease",
+                  transition: "box-shadow 0.3s ease",
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(201,169,110,0.35)";
                   (e.currentTarget as HTMLElement).style.boxShadow = "var(--shadow-md)";
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "var(--beige)";
-                  (e.currentTarget as HTMLElement).style.boxShadow = "var(--shadow-sm)";
+                  (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.35)";
                 }}
               >
                 <div
@@ -140,19 +134,19 @@ export default function VisitUs() {
             ))}
 
             {/* CTA buttons */}
-            <div style={{ display: "flex", gap: 12, marginTop: 8 }}>
+            <div className="flex flex-col sm:flex-row gap-3 mt-2">
               <a
                 href="https://maps.google.com/?q=29+Sarovar+Path+Sector+21C+Chandigarh"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-primary flex-1 justify-center"
+                className="glass-button flex-1 justify-center"
               >
                 <Navigation size={14} />
                 <span>Get Directions</span>
               </a>
               <a
                 href="tel:+918054805451"
-                className="btn btn-outline-dark flex-1 justify-center"
+                className="glass-button flex-1 justify-center"
               >
                 <Phone size={14} />
                 <span>Call Now</span>
@@ -168,25 +162,24 @@ export default function VisitUs() {
             className="lg:col-span-3"
           >
             <div
-              className="relative rounded-[var(--radius-xl)] overflow-hidden"
+              className="relative glass-panel overflow-hidden"
               style={{
-                boxShadow: "var(--shadow-xl)",
-                border: "1px solid var(--beige)",
                 height: "clamp(300px, 45vw, 520px)",
+                padding: "8px",
               }}
             >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.8!2d76.7400!3d30.7200!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fed0be66ef96b%3A0xa5ff67f9527d5cbe!2sSector%2021C%2C%20Chandigarh%2C%20160022!5e0!3m2!1sen!2sin!4v1234567890"
                 width="100%"
                 height="100%"
-                style={{ border: 0, display: "block" }}
+                style={{ border: 0, display: "block", borderRadius: "calc(var(--radius-xl) - 8px)" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="New Capital Bakery — 29 Sarovar Path, Sector 21C, Chandigarh"
               />
               {/* Map overlay label */}
-              <div className="absolute top-4 left-4 glass rounded-[var(--radius-md)]" style={{ padding: "12px 16px", maxWidth: 220, boxShadow: "var(--shadow-md)" }}>
+              <div className="absolute top-6 left-6 glass-panel" style={{ padding: "12px 16px", maxWidth: 220 }}>
                 <div className="font-playfair font-bold" style={{ fontSize: 13, color: "var(--choco-700)", lineHeight: 1.3 }}>
                   New Capital Bakery
                 </div>

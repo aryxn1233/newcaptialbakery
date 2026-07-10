@@ -17,10 +17,7 @@ export default function Legacy() {
   return (
     <section
       ref={ref}
-      className="section-padding relative overflow-hidden"
-      style={{
-        background: "linear-gradient(160deg, var(--choco-900) 0%, var(--choco-700) 50%, var(--choco-800) 100%)",
-      }}
+      className="section-padding relative overflow-hidden ambient-bg-dark"
       aria-label="Our Legacy"
     >
       {/* Decorative radial */}
@@ -41,6 +38,7 @@ export default function Legacy() {
               initial={{ opacity: 0, x: -40 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.9 }}
+              className="glass-panel-dark p-8 md:p-12"
             >
               <div className="section-eyebrow" style={{ color: "var(--gold)" }}>
                 Our Heritage
@@ -70,8 +68,8 @@ export default function Legacy() {
               <div
                 className="rounded-[var(--radius-md)] p-6"
                 style={{
-                  background: "rgba(201,169,110,0.06)",
-                  border: "1px solid rgba(201,169,110,0.18)",
+                  background: "rgba(201,169,110,0.1)",
+                  border: "1px solid rgba(201,169,110,0.25)",
                 }}
               >
                 <p
@@ -141,7 +139,7 @@ export default function Legacy() {
                   </div>
 
                   {/* Content */}
-                  <div className="pb-8 pt-1 flex-1">
+                  <div className="glass-panel-dark p-5 mb-8 flex-1">
                     <div
                       className="font-playfair font-bold mb-2"
                       style={{ fontSize: "clamp(18px, 2vw, 22px)", color: "var(--gold)" }}

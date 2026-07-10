@@ -29,8 +29,7 @@ export default function About() {
     <section
       id="about"
       ref={ref}
-      className="section-padding"
-      style={{ background: "var(--warm-white)" }}
+      className="section-padding ambient-bg"
       aria-label="About New Capital Bakery"
     >
       <div className="container-main">
@@ -119,7 +118,7 @@ export default function About() {
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute glass rounded-[var(--radius-md)]"
+              className="absolute glass-panel"
               style={{
                 bottom: "clamp(110px, 16vw, 160px)",
                 right: -20,
@@ -156,7 +155,7 @@ export default function About() {
             variants={fadeRight}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className="flex flex-col justify-center"
+            className="flex flex-col justify-center glass-panel p-6 sm:p-8 md:p-12"
             style={{ gap: "clamp(24px, 3vw, 36px)" }}
           >
             {/* Pull quote */}
@@ -191,10 +190,8 @@ export default function About() {
 
             {/* No-delivery notice */}
             <div
-              className="rounded-[var(--radius-md)]"
+              className="glass-panel"
               style={{
-                background: "linear-gradient(135deg, var(--beige-light) 0%, var(--cream) 100%)",
-                border: "1px solid rgba(201,169,110,0.3)",
                 padding: "16px 20px",
               }}
             >

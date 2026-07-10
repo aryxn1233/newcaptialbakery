@@ -22,8 +22,8 @@ export default function Hero() {
     <section
       id="home"
       ref={containerRef}
-      className="relative flex items-center justify-center overflow-hidden"
-      style={{ minHeight: "100svh", background: "#0a0705", paddingBottom: "100px" }}
+      className="relative flex flex-col items-center justify-between overflow-hidden"
+      style={{ minHeight: "100svh", background: "#0a0705" }}
       aria-label="Hero — New Capital Bakery"
     >
       {/* ── Background ── */}
@@ -39,7 +39,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60" />
       </motion.div>
 
-      <div className="container-main relative z-10 w-full pt-32 pb-24 h-full flex flex-col justify-center">
+      <div className="container-main relative z-10 w-full pt-28 md:pt-32 h-full flex flex-col justify-start lg:justify-center flex-1">
         <div className="grid lg:grid-cols-[1fr_1.5fr_1fr] gap-8 items-center h-full">
           
           {/* ── Left Content ── */}
@@ -47,12 +47,12 @@ export default function Hero() {
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="flex flex-col text-center lg:text-left z-20"
+            className="flex flex-col text-center lg:text-left z-20 mt-8 lg:mt-0 glass-panel p-6 md:p-10"
           >
 
             <h1
-              className="font-playfair text-balance leading-[1.1] mb-6"
-              style={{ fontSize: "clamp(40px, 5vw, 64px)", color: "var(--cream)" }}
+              className="font-playfair text-balance leading-[1.1] mb-4 md:mb-6"
+              style={{ fontSize: "clamp(36px, 6vw, 64px)", color: "var(--cream)" }}
             >
               Baking Happiness <br />
               <span className="italic" style={{ color: "var(--gold-light)" }}>Every Day.</span>
@@ -70,18 +70,10 @@ export default function Hero() {
               Freshly baked breads, pastries, cakes, cookies and snacks made with decades of tradition and premium ingredients.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-4">
               <button
                 onClick={() => scrollTo("products")}
-                className="btn btn-lg"
-                style={{
-                  background: "var(--gold)",
-                  color: "var(--choco-900)",
-                  border: "none",
-                  padding: "14px 28px",
-                  borderRadius: "8px",
-                  fontWeight: 600,
-                }}
+                className="glass-button"
               >
                 <span>Explore Menu &rarr;</span>
               </button>
@@ -140,51 +132,50 @@ export default function Hero() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.6 }}
-        className="absolute bottom-0 left-0 right-0 z-30 px-4 pb-6"
+        className="w-full z-30 px-4 pb-6 mt-auto"
       >
         <div 
-          className="container-main mx-auto rounded-3xl"
-          style={{ background: "var(--cream)", padding: "32px 40px", boxShadow: "0 20px 40px rgba(0,0,0,0.4)" }}
+          className="container-main mx-auto glass-panel p-5 md:p-8 lg:py-8 lg:px-10"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 divide-y md:divide-y-0 lg:divide-x divide-[rgba(61,26,10,0.1)]">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 divide-x-0 lg:divide-x divide-[rgba(61,26,10,0.1)]">
             
-            <div className="flex items-center gap-4 lg:justify-center">
-              <div className="w-12 h-12 rounded-full border flex items-center justify-center flex-shrink-0" style={{ borderColor: "var(--gold)", color: "var(--choco-800)" }}>
-                <UtensilsCrossed size={20} />
+            <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-3 lg:gap-4 lg:justify-center">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border flex items-center justify-center flex-shrink-0" style={{ borderColor: "var(--gold)", color: "var(--cream)" }}>
+                <UtensilsCrossed size={18} className="md:w-5 md:h-5" />
               </div>
               <div>
-                <div className="font-playfair font-bold text-lg" style={{ color: "var(--choco-800)" }}>Since 1956</div>
-                <div className="font-poppins text-xs" style={{ color: "var(--text-secondary)" }}>Decades of baking excellence</div>
+                <div className="font-playfair font-bold text-sm md:text-lg" style={{ color: "var(--cream)" }}>Since 1956</div>
+                <div className="font-poppins text-[10px] md:text-xs" style={{ color: "var(--gold-light)" }}>Decades of baking</div>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 lg:justify-center pt-6 md:pt-0">
-              <div className="w-12 h-12 rounded-full border flex items-center justify-center flex-shrink-0" style={{ borderColor: "var(--gold)", color: "var(--choco-800)" }}>
-                <Cookie size={20} />
+            <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-3 lg:gap-4 lg:justify-center">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border flex items-center justify-center flex-shrink-0" style={{ borderColor: "var(--gold)", color: "var(--cream)" }}>
+                <Cookie size={18} className="md:w-5 md:h-5" />
               </div>
               <div>
-                <div className="font-playfair font-bold text-lg" style={{ color: "var(--choco-800)" }}>Fresh Daily</div>
-                <div className="font-poppins text-xs" style={{ color: "var(--text-secondary)" }}>Baked fresh every single day</div>
+                <div className="font-playfair font-bold text-sm md:text-lg" style={{ color: "var(--cream)" }}>Fresh Daily</div>
+                <div className="font-poppins text-[10px] md:text-xs" style={{ color: "var(--gold-light)" }}>Baked fresh every day</div>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 lg:justify-center pt-6 md:pt-0">
-              <div className="w-12 h-12 rounded-full border flex items-center justify-center flex-shrink-0" style={{ borderColor: "var(--gold)", color: "var(--choco-800)" }}>
-                <Leaf size={20} />
+            <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-3 lg:gap-4 lg:justify-center">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border flex items-center justify-center flex-shrink-0" style={{ borderColor: "var(--gold)", color: "var(--cream)" }}>
+                <Leaf size={18} className="md:w-5 md:h-5" />
               </div>
               <div>
-                <div className="font-playfair font-bold text-lg" style={{ color: "var(--choco-800)" }}>Premium Ingredients</div>
-                <div className="font-poppins text-xs" style={{ color: "var(--text-secondary)" }}>Finest ingredients sourced carefully</div>
+                <div className="font-playfair font-bold text-sm md:text-lg" style={{ color: "var(--cream)" }}>Premium Ingredients</div>
+                <div className="font-poppins text-[10px] md:text-xs" style={{ color: "var(--gold-light)" }}>Finest sourced carefully</div>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 lg:justify-center pt-6 md:pt-0">
-              <div className="w-12 h-12 rounded-full border flex items-center justify-center flex-shrink-0" style={{ borderColor: "var(--gold)", color: "var(--choco-800)" }}>
-                <Heart size={20} />
+            <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-3 lg:gap-4 lg:justify-center">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border flex items-center justify-center flex-shrink-0" style={{ borderColor: "var(--gold)", color: "var(--cream)" }}>
+                <Heart size={18} className="md:w-5 md:h-5" />
               </div>
               <div>
-                <div className="font-playfair font-bold text-lg" style={{ color: "var(--choco-800)" }}>Loved by Thousands</div>
-                <div className="font-poppins text-xs" style={{ color: "var(--text-secondary)" }}>Trusted and loved by generations</div>
+                <div className="font-playfair font-bold text-sm md:text-lg" style={{ color: "var(--cream)" }}>Loved by Thousands</div>
+                <div className="font-poppins text-[10px] md:text-xs" style={{ color: "var(--gold-light)" }}>Trusted by generations</div>
               </div>
             </div>
 

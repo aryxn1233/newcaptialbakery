@@ -27,12 +27,10 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
           exit={{ opacity: 0, scale: 0.88, y: 40 }}
           transition={{ duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
           onClick={(e) => e.stopPropagation()}
-          className="relative overflow-hidden rounded-[var(--radius-xl)]"
+          className="glass-panel relative overflow-hidden"
           style={{
             width: "min(760px, 95vw)",
             maxHeight: "90vh",
-            background: "var(--warm-white)",
-            boxShadow: "0 48px 120px rgba(0,0,0,0.6)",
           }}
         >
           {/* Close */}
@@ -114,7 +112,7 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
               </div>
 
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                <a href="tel:+918054805451" className="btn btn-primary justify-center w-full">
+                <a href="tel:+918054805451" className="glass-button w-full">
                   <Phone size={15} />
                   <span>Call to Enquire</span>
                 </a>
@@ -122,12 +120,7 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
                   href="https://wa.me/918054805451"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn justify-center w-full"
-                  style={{
-                    background: "rgba(37,211,102,0.08)",
-                    color: "#25D366",
-                    border: "1.5px solid rgba(37,211,102,0.28)",
-                  }}
+                  className="glass-button w-full"
                 >
                   <span>💬</span>
                   <span>WhatsApp Us</span>
@@ -164,8 +157,7 @@ export default function ProductShowcase() {
     <>
       <section
         id="products"
-        className="section-padding"
-        style={{ background: "var(--warm-white)" }}
+        className="section-padding ambient-bg"
         aria-label="Product Showcase"
       >
         <div ref={ref} className="container-main">
@@ -227,8 +219,8 @@ export default function ProductShowcase() {
                 placeholder="Search products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="input-premium"
-                style={{ paddingLeft: 44, paddingRight: searchQuery ? 44 : 18 }}
+                className="glass-panel w-full outline-none font-poppins"
+                style={{ padding: "14px 18px 14px 44px", color: "var(--choco-800)" }}
                 aria-label="Search products"
               />
               {searchQuery && (
@@ -261,15 +253,16 @@ export default function ProductShowcase() {
                     padding: "9px 20px",
                     background:
                       activeCategory === cat
-                        ? "linear-gradient(135deg, var(--coffee) 0%, var(--choco-700) 100%)"
-                        : "#fff",
-                    color: activeCategory === cat ? "var(--cream)" : "var(--text-secondary)",
+                        ? "linear-gradient(135deg, rgba(201, 169, 110, 0.4) 0%, rgba(139, 94, 60, 0.2) 100%)"
+                        : "rgba(255, 255, 255, 0.15)",
+                    backdropFilter: "blur(12px)",
+                    color: activeCategory === cat ? "var(--choco-900)" : "var(--choco-800)",
                     border:
                       activeCategory === cat
-                        ? "1.5px solid transparent"
-                        : "1.5px solid var(--beige)",
+                        ? "1px solid rgba(201, 169, 110, 0.5)"
+                        : "1px solid rgba(255, 255, 255, 0.25)",
                     boxShadow:
-                      activeCategory === cat ? "var(--shadow-md)" : "var(--shadow-sm)",
+                      activeCategory === cat ? "0 4px 12px rgba(201,169,110,0.2)" : "0 2px 8px rgba(0,0,0,0.05)",
                   }}
                 >
                   {cat}
@@ -303,13 +296,11 @@ export default function ProductShowcase() {
                   exit={{ opacity: 0, scale: 0.93 }}
                   transition={{ duration: 0.4, delay: Math.min(i * 0.04, 0.3) }}
                   onClick={() => setSelectedProduct(product)}
-                  className="group card cursor-pointer flex flex-col"
-                  style={{ borderRadius: "var(--radius-lg)" }}
+                  className="group glass-panel cursor-pointer flex flex-col"
                 >
-                  {/* Image */}
                   <div
-                    className="relative overflow-hidden rounded-t-[var(--radius-lg)]"
-                    style={{ height: "clamp(180px, 20vw, 240px)", background: "var(--beige-light)" }}
+                    className="relative overflow-hidden"
+                    style={{ height: "clamp(180px, 20vw, 240px)", borderRadius: "var(--radius-xl) var(--radius-xl) 0 0" }}
                   >
                     <Image
                       src={product.imagePath}
