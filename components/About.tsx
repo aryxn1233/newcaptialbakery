@@ -118,7 +118,7 @@ export default function About() {
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute glass-panel"
+              className="absolute liquid-glass"
               style={{
                 bottom: "clamp(110px, 16vw, 160px)",
                 right: -20,
@@ -155,7 +155,7 @@ export default function About() {
             variants={fadeRight}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className="flex flex-col justify-center glass-panel p-6 sm:p-8 md:p-12"
+            className="flex flex-col justify-center liquid-glass p-6 sm:p-8 md:p-12"
             style={{ gap: "clamp(24px, 3vw, 36px)" }}
           >
             {/* Pull quote */}
@@ -188,9 +188,8 @@ export default function About() {
               </p>
             </div>
 
-            {/* No-delivery notice */}
             <div
-              className="glass-panel"
+              className="liquid-glass"
               style={{
                 padding: "16px 20px",
               }}
@@ -209,12 +208,9 @@ export default function About() {
                   initial={{ opacity: 0, y: 20, scale: 0.96 }}
                   animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
                   transition={{ delay: 0.5 + i * 0.08, duration: 0.55 }}
-                  className="flex items-center gap-3 rounded-[var(--radius-md)]"
+                  className="flex items-center gap-3 liquid-glass"
                   style={{
-                    background: "#fff",
-                    border: "1px solid var(--beige)",
                     padding: "14px 16px",
-                    boxShadow: "var(--shadow-sm)",
                   }}
                 >
                   <div

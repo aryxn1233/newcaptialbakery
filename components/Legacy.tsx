@@ -38,7 +38,7 @@ export default function Legacy() {
               initial={{ opacity: 0, x: -40 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.9 }}
-              className="glass-panel-dark p-8 md:p-12"
+              className="liquid-glass-dark p-8 md:p-12"
             >
               <div className="section-eyebrow" style={{ color: "var(--gold)" }}>
                 Our Heritage
@@ -139,7 +139,7 @@ export default function Legacy() {
                   </div>
 
                   {/* Content */}
-                  <div className="glass-panel-dark p-5 mb-8 flex-1">
+                  <div className="liquid-glass-dark p-5 mb-8 flex-1">
                     <div
                       className="font-playfair font-bold mb-2"
                       style={{ fontSize: "clamp(18px, 2vw, 22px)", color: "var(--gold)" }}

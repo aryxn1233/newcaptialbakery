@@ -16,7 +16,9 @@ function scrollTo(id: string) {
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end start"] });
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
   
   return (
     <section
@@ -27,7 +29,7 @@ export default function Hero() {
       aria-label="Hero — New Capital Bakery"
     >
       {/* ── Background ── */}
-      <motion.div style={{ y: bgY }} className="absolute inset-0 z-0 pointer-events-none">
+      <motion.div style={{ y: bgY, scale: bgScale }} className="absolute inset-0 z-0 pointer-events-none">
         <Image
           src="/backgroundimage.png"
           alt="Bakery Background"
@@ -44,10 +46,11 @@ export default function Hero() {
           
           {/* ── Left Content ── */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="flex flex-col text-center lg:text-left z-20 mt-8 lg:mt-0 glass-panel p-6 md:p-10"
+            initial={{ opacity: 0, x: -40, y: 20 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
+            transition={{ duration: 1.2, ease: [0.25, 1, 0.5, 1] }}
+            style={{ y: contentY }}
+            className="flex flex-col text-center lg:text-left z-20 mt-8 lg:mt-0 liquid-glass p-6 md:p-10"
           >
 
             <h1
@@ -73,7 +76,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-4">
               <button
                 onClick={() => scrollTo("products")}
-                className="glass-button"
+                className="liquid-button-primary"
               >
                 <span>Explore Menu &rarr;</span>
               </button>
@@ -129,13 +132,13 @@ export default function Hero() {
 
       {/* ── Bottom Floating Bar ── */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.6 }}
+        transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 1, 0.5, 1] }}
         className="w-full z-30 px-4 pb-6 mt-auto"
       >
         <div 
-          className="container-main mx-auto glass-panel p-5 md:p-8 lg:py-8 lg:px-10"
+          className="container-main mx-auto liquid-glass p-5 md:p-8 lg:py-8 lg:px-10"
         >
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 divide-x-0 lg:divide-x divide-[rgba(61,26,10,0.1)]">
             

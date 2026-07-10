@@ -45,7 +45,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 xl:gap-14 pb-14" style={{ borderBottom: "1px solid rgba(201,169,110,0.1)" }}>
 
           {/* Brand column */}
-          <div className="sm:col-span-2 lg:col-span-1 glass-panel-dark p-6 md:p-8">
+          <div className="sm:col-span-2 lg:col-span-1 liquid-glass-dark p-6 md:p-8">
             <div style={{ marginBottom: 20 }}>
               <div className="font-playfair font-bold" style={{ fontSize: 24, color: "var(--cream)", lineHeight: 1.1 }}>
                 New Capital
@@ -92,7 +92,7 @@ export default function Footer() {
           </div>
 
           {/* Quick links */}
-          <div className="glass-panel-dark p-6 md:p-8">
+          <div className="liquid-glass-dark p-6 md:p-8">
             <div className="font-playfair font-bold" style={{ fontSize: 15, color: "var(--cream)", marginBottom: 20 }}>
               Navigation
             </div>
@@ -121,7 +121,7 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div className="glass-panel-dark p-6 md:p-8 lg:col-span-2">
+          <div className="liquid-glass-dark p-6 md:p-8 lg:col-span-2">
             <div className="font-playfair font-bold" style={{ fontSize: 15, color: "var(--cream)", marginBottom: 20 }}>
               Contact
             </div>

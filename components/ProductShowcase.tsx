@@ -27,7 +27,7 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
           exit={{ opacity: 0, scale: 0.88, y: 40 }}
           transition={{ duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
           onClick={(e) => e.stopPropagation()}
-          className="glass-panel relative overflow-hidden"
+          className="liquid-glass relative overflow-hidden"
           style={{
             width: "min(760px, 95vw)",
             maxHeight: "90vh",
@@ -112,7 +112,7 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
               </div>
 
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                <a href="tel:+918054805451" className="glass-button w-full">
+                <a href="tel:+918054805451" className="liquid-button-secondary w-full">
                   <Phone size={15} />
                   <span>Call to Enquire</span>
                 </a>
@@ -120,7 +120,7 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
                   href="https://wa.me/918054805451"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="glass-button w-full"
+                  className="liquid-button-secondary w-full"
                 >
                   <span>💬</span>
                   <span>WhatsApp Us</span>
@@ -219,7 +219,7 @@ export default function ProductShowcase() {
                 placeholder="Search products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="glass-panel w-full outline-none font-poppins"
+                className="liquid-glass w-full outline-none font-poppins"
                 style={{ padding: "14px 18px 14px 44px", color: "var(--choco-800)" }}
                 aria-label="Search products"
               />
@@ -296,7 +296,7 @@ export default function ProductShowcase() {
                   exit={{ opacity: 0, scale: 0.93 }}
                   transition={{ duration: 0.4, delay: Math.min(i * 0.04, 0.3) }}
                   onClick={() => setSelectedProduct(product)}
-                  className="group glass-panel cursor-pointer flex flex-col"
+                  className="group liquid-glass cursor-pointer flex flex-col"
                 >
                   <div
                     className="relative overflow-hidden"

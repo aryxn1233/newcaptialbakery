@@ -64,7 +64,7 @@ export default function Navbar() {
         transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
         className={`fixed z-[900] transition-all duration-500 rounded-[24px] ${
           scrolled
-            ? "top-4 left-4 right-4 glass-panel max-w-[1280px] mx-auto"
+            ? "top-4 left-4 right-4 liquid-glass max-w-[1280px] mx-auto"
             : "top-0 left-0 right-0 bg-transparent"
         }`}
       >
@@ -114,7 +114,7 @@ export default function Navbar() {
             <div className="flex items-center gap-3">
               <a
                 href="tel:+918054805451"
-                className={`hidden md:inline-flex ${scrolled ? 'glass-button' : 'btn btn-sm'}`}
+                className={`hidden md:inline-flex ${scrolled ? 'liquid-button-secondary' : 'btn btn-sm'}`}
                 style={{
                   background: atTop
                     ? "rgba(201,169,110,0.18)"
@@ -163,10 +163,11 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed top-0 right-0 bottom-0 z-[960] flex flex-col"
+              className="fixed top-0 right-0 bottom-0 z-[960] flex flex-col liquid-glass-dark"
               style={{
                 width: "min(360px, 90vw)",
-                background: "linear-gradient(160deg, var(--choco-900) 0%, var(--choco-700) 100%)",
+                borderRight: "none",
+                borderRadius: "24px 0 0 24px"
               }}
             >
               {/* Header */}

@@ -95,7 +95,7 @@ export default function VisitUs() {
                 initial={{ opacity: 0, x: -24 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.2 + i * 0.08 }}
-                className="flex items-start gap-4 glass-panel group"
+                className="flex items-start gap-4 liquid-glass group"
                 style={{
                   padding: "clamp(16px, 2vw, 22px)",
                   transition: "box-shadow 0.3s ease",
@@ -139,14 +139,14 @@ export default function VisitUs() {
                 href="https://maps.google.com/?q=29+Sarovar+Path+Sector+21C+Chandigarh"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-button flex-1 justify-center"
+                className="liquid-button-secondary flex-1 justify-center"
               >
                 <Navigation size={14} />
                 <span>Get Directions</span>
               </a>
               <a
                 href="tel:+918054805451"
-                className="glass-button flex-1 justify-center"
+                className="liquid-button-secondary flex-1 justify-center"
               >
                 <Phone size={14} />
                 <span>Call Now</span>
@@ -162,7 +162,7 @@ export default function VisitUs() {
             className="lg:col-span-3"
           >
             <div
-              className="relative glass-panel overflow-hidden"
+              className="relative liquid-glass overflow-hidden"
               style={{
                 height: "clamp(300px, 45vw, 520px)",
                 padding: "8px",
@@ -179,7 +179,7 @@ export default function VisitUs() {
                 title="New Capital Bakery — 29 Sarovar Path, Sector 21C, Chandigarh"
               />
               {/* Map overlay label */}
-              <div className="absolute top-6 left-6 glass-panel" style={{ padding: "12px 16px", maxWidth: 220 }}>
+              <div className="absolute top-6 left-6 liquid-glass" style={{ padding: "12px 16px", maxWidth: 220 }}>
                 <div className="font-playfair font-bold" style={{ fontSize: 13, color: "var(--choco-700)", lineHeight: 1.3 }}>
                   New Capital Bakery
                 </div>
