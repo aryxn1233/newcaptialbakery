@@ -26,10 +26,7 @@ export default function Contact() {
     <section
       id="contact"
       ref={ref}
-      className="section-padding"
-      style={{
-        background: "linear-gradient(180deg, var(--warm-white) 0%, var(--cream-deep) 100%)",
-      }}
+      className="section-padding ambient-bg"
       aria-label="Contact New Capital Bakery"
     >
       <div className="container-main">
@@ -106,12 +103,9 @@ export default function Contact() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.3 + i * 0.1 }}
-                className="flex items-start gap-4 rounded-[var(--radius-lg)]"
+                className="flex items-start gap-4 liquid-glass"
                 style={{
-                  background: "#fff",
-                  border: "1px solid var(--beige)",
                   padding: "clamp(16px, 2vw, 24px)",
-                  boxShadow: "var(--shadow-sm)",
                 }}
               >
                 <div
@@ -150,12 +144,9 @@ export default function Contact() {
           >
             <form
               onSubmit={handleSubmit}
-              className="rounded-[var(--radius-xl)]"
+              className="liquid-glass"
               style={{
-                background: "#fff",
-                border: "1px solid var(--beige)",
                 padding: "clamp(28px, 4vw, 48px)",
-                boxShadow: "var(--shadow-lg)",
                 display: "flex",
                 flexDirection: "column",
                 gap: 20,
@@ -230,7 +221,7 @@ export default function Contact() {
                 disabled={sent}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="btn btn-primary w-full justify-center"
+                className="liquid-button-primary w-full justify-center"
                 style={{
                   padding: "18px 36px",
                   fontSize: 15,

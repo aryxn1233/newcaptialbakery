@@ -20,8 +20,7 @@ export default function MeetOwner() {
     <section
       id="owner"
       ref={ref}
-      className="section-padding relative overflow-hidden"
-      style={{ background: "var(--warm-white)" }}
+      className="section-padding relative overflow-hidden ambient-bg"
       aria-label="Meet the Owner"
     >
       {/* Background accent */}
@@ -77,8 +76,7 @@ export default function MeetOwner() {
             />
 
             <div
-              className="relative overflow-hidden rounded-[var(--radius-xl)]"
-              style={{ boxShadow: "var(--shadow-xl)" }}
+              className="relative overflow-hidden liquid-glass"
             >
               <video
                 ref={vidRef}
@@ -99,8 +97,8 @@ export default function MeetOwner() {
               {/* Mute/Unmute Toggle Button */}
               <button
                 onClick={() => setIsMuted(!isMuted)}
-                className="absolute bottom-4 left-4 z-20 flex items-center justify-center rounded-full glass hover:scale-105 transition-transform"
-                style={{ width: 44, height: 44, border: "1px solid rgba(253,248,240,0.3)" }}
+                className="absolute bottom-4 left-4 z-20 flex items-center justify-center rounded-full liquid-glass hover:scale-105 transition-transform"
+                style={{ width: 44, height: 44, border: "1px solid rgba(255,255,255,0.3)" }}
                 aria-label={isMuted ? "Unmute video" : "Mute video"}
               >
                 {isMuted ? (
@@ -115,13 +113,12 @@ export default function MeetOwner() {
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute glass rounded-[var(--radius-md)]"
+              className="absolute liquid-glass"
               style={{
                 bottom: -20,
                 right: -16,
                 padding: "20px 24px",
                 maxWidth: 240,
-                boxShadow: "var(--shadow-lg), var(--shadow-gold)",
               }}
             >
               <p
@@ -176,10 +173,8 @@ export default function MeetOwner() {
 
             {/* Since badge */}
             <div
-              className="flex items-center gap-4 rounded-[var(--radius-md)]"
+              className="flex items-center gap-4 liquid-glass"
               style={{
-                background: "linear-gradient(135deg, var(--beige-light) 0%, var(--cream) 100%)",
-                border: "1px solid rgba(201,169,110,0.25)",
                 padding: "16px 20px",
               }}
             >
@@ -202,7 +197,7 @@ export default function MeetOwner() {
 
             {/* CTAs */}
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <a href="tel:+918054805451" className="btn btn-primary">
+              <a href="tel:+918054805451" className="liquid-button-primary">
                 <Phone size={15} />
                 <span>Call Abhay</span>
               </a>
@@ -210,12 +205,7 @@ export default function MeetOwner() {
                 href="https://wa.me/918054805451"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn"
-                style={{
-                  background: "rgba(37,211,102,0.08)",
-                  color: "#25D366",
-                  border: "1.5px solid rgba(37,211,102,0.28)",
-                }}
+                className="liquid-button-secondary"
               >
                 <span>💬 WhatsApp Us</span>
               </a>

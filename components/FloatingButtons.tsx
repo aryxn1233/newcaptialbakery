@@ -27,16 +27,17 @@ export default function FloatingButtons() {
         whileHover={{ scale: 1.12, y: -2 }}
         whileTap={{ scale: 0.9 }}
         aria-label="Chat on WhatsApp with New Capital Bakery"
+        className="liquid-glass"
         style={{
           width: 56,
           height: 56,
           borderRadius: "50%",
-          background: "#25D366",
+          background: "rgba(37,211,102,0.85)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          boxShadow: "0 6px 24px rgba(37,211,102,0.45), 0 2px 8px rgba(0,0,0,0.2)",
           position: "relative",
+          border: "1px solid rgba(255,255,255,0.3)",
         }}
       >
         {/* Pulse ring */}
@@ -64,15 +65,16 @@ export default function FloatingButtons() {
         whileHover={{ scale: 1.12, y: -2 }}
         whileTap={{ scale: 0.9 }}
         aria-label="Call New Capital Bakery"
+        className="liquid-glass-dark"
         style={{
           width: 56,
           height: 56,
           borderRadius: "50%",
-          background: "linear-gradient(135deg, var(--coffee) 0%, var(--choco-700) 100%)",
+          background: "rgba(107,66,38,0.75)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          boxShadow: "0 6px 24px rgba(107,66,38,0.5), 0 2px 8px rgba(0,0,0,0.2)",
+          border: "1px solid rgba(255,255,255,0.2)",
         }}
       >
         <Phone size={22} style={{ color: "var(--cream)" }} />

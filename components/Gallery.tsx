@@ -26,8 +26,7 @@ export default function Gallery() {
   return (
     <section
       id="gallery"
-      className="section-padding"
-      style={{ background: "var(--cream)" }}
+      className="section-padding ambient-bg"
       aria-label="Bakery Gallery"
     >
       <div ref={ref} className="container-main">
@@ -72,9 +71,9 @@ export default function Gallery() {
                 animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
                 transition={{ delay: 0.08 + i * 0.045, duration: 0.6 }}
                 onClick={() => setLightbox({ src: item.src, alt: item.alt })}
-                className="group cursor-pointer overflow-hidden rounded-[var(--radius-lg)]"
-                style={{ boxShadow: "var(--shadow-sm)", display: "block", marginBottom: 20 }}
-                whileHover={{ y: -4, boxShadow: "var(--shadow-lg)" }}
+                className="group cursor-pointer overflow-hidden liquid-glass"
+                style={{ display: "block", marginBottom: 20 }}
+                whileHover={{ y: -4 }}
                 role="button"
                 aria-label={`View ${item.alt}`}
               >
@@ -139,8 +138,8 @@ export default function Gallery() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.82, opacity: 0 }}
               transition={{ duration: 0.38, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="relative"
-              style={{ maxWidth: "min(900px, 94vw)", width: "100%" }}
+              className="relative liquid-glass overflow-hidden"
+              style={{ maxWidth: "min(900px, 94vw)", width: "100%", padding: 8 }}
               onClick={(e) => e.stopPropagation()}
             >
               <Image

@@ -22,8 +22,7 @@ export default function WhyChooseUs() {
   return (
     <section
       ref={ref}
-      className="section-padding relative overflow-hidden"
-      style={{ background: "var(--cream)" }}
+      className="section-padding relative overflow-hidden ambient-bg"
       aria-label="Why Choose New Capital Bakery"
     >
       {/* Background accent */}
@@ -82,21 +81,9 @@ export default function WhyChooseUs() {
               animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
               transition={{ duration: 0.65, delay: i * 0.06, ease: [0.25, 0.46, 0.45, 0.94] }}
               whileHover={{ y: -6, scale: 1.01 }}
-              className="group relative rounded-[var(--radius-lg)] overflow-hidden"
+              className="group relative liquid-glass overflow-hidden"
               style={{
-                background: "#fff",
-                border: "1px solid var(--beige)",
                 padding: "clamp(24px, 3vw, 36px)",
-                boxShadow: "var(--shadow-sm)",
-                transition: "transform 0.35s var(--ease-premium), box-shadow 0.35s var(--ease-premium), border-color 0.3s ease",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.boxShadow = "var(--shadow-lg)";
-                (e.currentTarget as HTMLElement).style.borderColor = "rgba(201,169,110,0.35)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.boxShadow = "var(--shadow-sm)";
-                (e.currentTarget as HTMLElement).style.borderColor = "var(--beige)";
               }}
             >
               {/* Top glow on hover */}

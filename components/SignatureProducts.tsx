@@ -12,10 +12,7 @@ export default function SignatureProducts() {
 
   return (
     <section
-      className="section-padding relative overflow-hidden"
-      style={{
-        background: "linear-gradient(160deg, var(--choco-900) 0%, var(--choco-700) 60%, var(--choco-800) 100%)",
-      }}
+      className="section-padding relative overflow-hidden ambient-bg-dark"
       aria-label="Signature Creations"
     >
       {/* Decorative background */}
@@ -73,10 +70,9 @@ export default function SignatureProducts() {
               initial={{ opacity: 0, y: 40, scale: 0.97 }}
               animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
               transition={{ duration: 0.75, delay: i * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="group relative overflow-hidden rounded-[var(--radius-xl)]"
+              className="group relative overflow-hidden liquid-glass-dark"
               style={{
                 minHeight: "clamp(280px, 35vw, 380px)",
-                boxShadow: "0 12px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,169,110,0.08)",
               }}
             >
               {/* Image */}

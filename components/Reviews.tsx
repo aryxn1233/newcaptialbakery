@@ -44,10 +44,7 @@ export default function Reviews() {
     <section
       id="reviews"
       ref={ref}
-      className="section-padding relative overflow-hidden"
-      style={{
-        background: "linear-gradient(160deg, var(--choco-900) 0%, #3A1508 50%, var(--choco-800) 100%)",
-      }}
+      className="section-padding relative overflow-hidden ambient-bg-dark"
       aria-label="Customer Reviews"
     >
       {/* Radial glow */}
@@ -143,7 +140,7 @@ export default function Reviews() {
                     initial={{ opacity: 0, y: 32 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ delay: 0.4 + i * 0.08 }}
-                    className="card-dark flex-shrink-0"
+                    className="liquid-glass-dark flex-shrink-0"
                     style={{
                       width: `calc(${100 / VISIBLE}% - ${(20 * (VISIBLE - 1)) / VISIBLE}px)`,
                       padding: "clamp(24px, 3vw, 36px)",
@@ -195,7 +192,7 @@ export default function Reviews() {
                   initial={{ opacity: 0, y: 24 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.3 + i * 0.06 }}
-                  className="card-dark"
+                  className="liquid-glass-dark"
                   style={{ padding: "24px" }}
                 >
                   <div className="flex items-start gap-3 mb-4">
@@ -287,7 +284,7 @@ export default function Reviews() {
           <p className="font-cormorant italic" style={{ fontSize: 20, color: "rgba(232,213,183,0.5)", marginBottom: 20 }}>
             Join thousands of happy families in Chandigarh
           </p>
-          <a href="tel:+918054805451" className="btn btn-primary btn-lg">
+          <a href="tel:+918054805451" className="liquid-button-primary btn-lg">
             <span>📞</span>
             <span>Visit Us Today</span>
           </a>
